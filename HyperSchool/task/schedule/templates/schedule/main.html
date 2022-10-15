@@ -1,0 +1,15 @@
+{% extends 'schedule/base.html' %}
+{% block content %}
+<p>Hi! Welcome to the site of online HyperSchool!</p><br/>
+<p>Feel free to choose any speciality you are interested in!</p><br/>
+<form method="get" action="">
+    <table><tr><td>{{ form.as_p }}</td><td>
+    <button type="submit">search</button></td></tr></table>
+</form>
+{{ courses | length }} courses
+<div>
+    {% for course in courses %}
+    <p><a href="{{ course.get_detail_url }}">{{ course.title }}</a></p>
+    {% endfor %}
+</div>
+{% endblock %}

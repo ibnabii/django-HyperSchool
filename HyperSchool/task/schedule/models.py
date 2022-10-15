@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 
 class Person(models.Model):
@@ -26,6 +26,9 @@ class Course(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_detail_url(self):
+        return reverse('course-detail', args=(self.pk,))
 
 
 class Student(Person):
