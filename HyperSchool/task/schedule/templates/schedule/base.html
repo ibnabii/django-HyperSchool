@@ -6,6 +6,12 @@
 </head>
 <body>
 <h2>HyperSchool</h2>
+{% if request.user.is_authenticated %}
+Logged in as: {{ request.user.username }} <a href="{% url 'logout' %}">Log Out</a>
+{% else %}
+<a href="{% url 'signup' %}">Sign up</a><br/>
+<a href="{% url 'login' %}">Login</a><br/>
+{% endif %}
 {% block content %}
 
 {% endblock %}

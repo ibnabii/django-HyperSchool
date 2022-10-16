@@ -16,4 +16,5 @@ urlpatterns = [
             template_name='schedule/enroll.html'
         ),
         name='enroll'),
+    path('signup/', views.UserSignup.as_view(), name='signup')
 ]

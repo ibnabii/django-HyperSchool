@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+from django.views import View
 from django.views.generic.detail import DetailView
+
 
 from .forms import SearchForm
 from .models import Course, Teacher
@@ -26,3 +30,19 @@ class CourseDetailView(DetailView):
 
 class TeacherDetailView(DetailView):
     model = Teacher
+
+
+class UserSignup(View):
+    def get(self, request):
+        context = {'form': UserCreationForm()}
+        return render(request, 'schedule/enroll.html', context)
+
+    def post(self, request):
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')
+        else:
+            context = {'form': form}
+            return render(request, 'schedule/enroll.html', context)
+
