@@ -9,6 +9,10 @@
     {% for teacher in course.teacher.all %}
     <a href="{{teacher.get_detail_url}}">{{teacher}}</a>
     {% endfor %}
+    <h3>Already studying:</h3>
+    {% for student in course.student_set.all %}
+    {{student.name}} {{student.surname}}<br/>
+    {% endfor %}
 </div>
 <div>
     <h2>Join us!</h2>
