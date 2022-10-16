@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic.detail import DetailView
 
 from .forms import SearchForm
-from .models import Course
+from .models import Course, Teacher
 
 def main(request):
     form = SearchForm(request.GET)
@@ -23,3 +23,6 @@ def main(request):
 
 class CourseDetailView(DetailView):
     model = Course
+
+class TeacherDetailView(DetailView):
+    model = Teacher

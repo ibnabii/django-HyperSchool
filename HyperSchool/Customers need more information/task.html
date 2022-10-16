@@ -1,0 +1,19 @@
+<html><body><h5 id="description">Description</h5>
+<p>You still have a lot to say to your clients. Every educational product should be fully represented. Let's add two more pages. One will contain information about the course content, teaching methods, duration, and staff. The other page will contain something like CVs of your best mentors, administrators, moderators, etc. to guide your student through the program to the mountains of knowledge.</p>
+<p>You already know how to create templates, so add two more to the templates directory. Think of interesting headings and add any information that would be useful for your clients. Also, we are going to display information from our models. To access the fields of the necessary model you can use the so-called <strong>dot notation </strong>— <code class="java">{{ model name.field name }}</code>. This page will have <code class="java">course_details</code> as the title. Do the same thing for the page on teachers (<code class="java">teacher_details</code>) but with the <code class="java">Teacher</code> model.</p>
+<p>To navigate to these brand-new pages, users need links to them on the previous pages. They are <em>main.html</em> for <code class="java">course_details</code> and <em>course_details.html</em> for <code class="java">teacher_details</code>.</p>
+<p>The next step is to add two view classes for each page in <em>views.py</em>. Create the <code class="java">template_name</code> and <code class="java">model</code> fields in them.</p>
+<p>Finally, pay attention to the paths' endings in <em>urls.py</em>. Use regular expressions to address the <code class="java">&lt;pk&gt;</code> of each item in the database.</p>
+<p>If you can easily switch from one page to another, let's continue with the next stage.</p>
+<h5 id="objectives">Objectives</h5>
+<ul>
+<li>Create new HTML templates for the course and teacher details pages;</li>
+<li>Add links for new pages;</li>
+<li>Add views for new pages</li>
+<li>Use regexes in the URL mapper to adjust it.</li>
+</ul>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1</strong>:<strong> </strong><em>the course details page</em></p>
+<p><img alt="" height="537" name="course details with teachers.png" src="https://ucarecdn.com/91ea239f-dbf8-4b26-ad22-93833849c808/" width="711"/></p>
+<p><strong>Example 2</strong>:<strong> </strong><em>the teacher's page</em></p>
+<p><img alt="" height="578" name="teachers page.png" src="https://ucarecdn.com/8fb0e95f-41aa-441c-9811-53f66fe1b7bd/" width="1072"/></p></body></html>

@@ -16,6 +16,9 @@ class Person(models.Model):
 class Teacher(Person):
     about = models.TextField(null=True, blank=True)
 
+    def get_detail_url(self):
+        return reverse('teacher-detail', args=(self.pk,))
+
 
 class Course(models.Model):
     title = models.CharField(max_length=255)

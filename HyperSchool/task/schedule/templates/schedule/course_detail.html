@@ -1,0 +1,14 @@
+{% extends 'schedule/base.html' %}
+{% block content %}
+<div>
+    <h2>Name of the program: {{ course.title }} </h2>
+    <p>Short description of the course: {{ course.info }} </p>
+    <p>Course duration: {{ course.duration_months}} </p>
+    <p>Total price: {{ course.price }} $</p>
+    <h3>Teachers of the course:</h3>
+    {% for teacher in course.teacher.all %}
+    <a href="{{teacher.get_detail_url}}">{{teacher}}</a>
+    {% endfor %}
+</div>
+<div><br/><br/><a href="{% url 'main' %}">Go back to the list of courses</a></div>
+{% endblock %}

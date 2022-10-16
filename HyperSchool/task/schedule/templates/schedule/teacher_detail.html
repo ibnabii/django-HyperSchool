@@ -1,0 +1,15 @@
+{% extends 'schedule/base.html' %}
+{% block content %}
+<h2>Get acquainted!</h2>
+<div>
+    <h3>Name: {{ teacher.name }} </h3>
+    <h3>Surname: {{ teacher.surname }} </h3>
+    <h4>Age: {{teacher.age}}</h4>
+    <p>Some words about experience: {{teacher.about}}</p>
+    <h4>Classes taught: </h4>
+    {% for course in teacher.course_set.all %}
+    <a href="{{course.get_detail_url}}">{{course}}</a>
+    {% endfor %}
+</div>
+<div><br/><br/><a href="{% url 'main' %}">Go back to the list of courses</a></div>
+{% endblock %}
